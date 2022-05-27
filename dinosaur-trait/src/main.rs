@@ -20,25 +20,18 @@ impl Dinosaur for Trex {
 
     fn eat(&self) -> String {
         println!("T-rex eats meat");
-        let character = String::from("carnivorous dinosaurs");
-        return character;
+        let food = String::from("Human");
+        return food;
     }
 
     fn mood(&self) -> String {
         println!("T-rex is mad");
-        let character = String::from("carnivorous dinosaurs");
-        return character;
+        let feeling = String::from("Angry");
+        return feeling;
     }
 }
 
 fn main() {
-    let Baryonyx: Trex = Dinosaur::new();
-    println!("eat = {} \n mood = {}", Baryonyx.eat().to_string(), Baryonyx.mood());
-    // Type annotation is necessary in this case.
-    // let mut dolly: Sheep = Animal::new("Dolly");
-    // // TODO ^ Try removing the type annotations.
-
-    // dolly.talk();
-    // dolly.shear();
-    // dolly.talk();
+    let Character: Trex = Dinosaur::new();
+    println!("So, it can eat {} while its mood is {}", Character.eat().to_string(), Character.mood());
 }
