@@ -3,6 +3,11 @@ pub struct Trex {
     pub mood: String,
 }
 
+pub struct Camarasaurus {
+    pub eat: String,
+    pub mood: String,
+}
+
 trait Dinosaur {
     fn new() -> Self;
     // behevior
@@ -31,7 +36,28 @@ impl Dinosaur for Trex {
     }
 }
 
+impl Dinosaur for Camarasaurus {
+    fn new() -> Self {
+        Camarasaurus { eat: String::from("vegie"), mood: String::from("kindness") }
+    }
+
+    fn eat(&self) -> String {
+        println!("Camarasaurus eats vegie");
+        let food = String::from("leaf");
+        return food;
+    }
+
+    fn mood(&self) -> String {
+        println!("Camarasaurus is kindness");
+        let feeling = String::from("fun");
+        return feeling;
+    }
+}
+
 fn main() {
-    let Character: Trex = Dinosaur::new();
-    println!("So, it can eat {} while its mood is {}", Character.eat().to_string(), Character.mood());
+    let character: Trex = Dinosaur::new();
+    println!("So, it can eat {} while its mood is {}\n", character.eat().to_string(), character.mood());
+
+    let character: Camarasaurus = Dinosaur::new();
+    println!("So, it can eat {} while its mood is {}", character.eat().to_string(), character.mood());
 }
